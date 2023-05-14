@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "File Input URL Extension",
+  "version": "1.0.0",
+  "description": "Chrome extension for using a URL when browsing and dropping files.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content-script.bundle.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "service_worker": "background.bundle.js"
+  }
+}
