@@ -5,7 +5,8 @@ const MENU_ID = "use-url-for-file-input";
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     title: "Use URL for file input",
-    id: MENU_ID
+    id: MENU_ID,
+    documentUrlPatterns: ["*://*/*"]
   });
 });
 
